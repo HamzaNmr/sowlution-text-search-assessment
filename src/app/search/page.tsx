@@ -37,7 +37,13 @@ const SearchPage = async ({ searchParams }: PageProps) => {
   let pattern = new RegExp(`${textToSearch}`, "gi")
 
   const filteredArticles = articles.filter(article => {
-    return article.title.toLowerCase().includes(query) || article.description.toLowerCase().includes(query)
+    const title = article.title.toLowerCase().trim()
+    const description = article.description.toLowerCase().trim()
+    const filterKey = query.toLowerCase().trim()
+
+    const result = title.includes(filterKey) || description.includes(filterKey)
+
+    return result
   })
 
   return (

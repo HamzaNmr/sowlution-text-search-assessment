@@ -32,10 +32,11 @@ const SearchBar = () => {
   }
 
   return (
-    <div className='relative w-full h-14 flex flex-col bg-white rounded-md'>
+    <div className='relative w-full h-12 flex flex-col bg-white rounded-md'>
       <div className='relative h-14 z-10 rounded-md'>
         <Input
           id="Search"
+          placeholder="Search for anything..."
           type='search'
           aria-label='Search Input'
           disabled={isSearching}
