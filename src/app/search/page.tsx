@@ -1,7 +1,6 @@
 import { articles } from '@/db/articles'
 import { redirect } from 'next/navigation'
 
-import { X } from 'lucide-react'
 import SearchBar from '@/components/SearchBar'
 import ListOfArticles from '@/components/ListOfArticles'
 
@@ -18,19 +17,6 @@ const SearchPage = async ({ searchParams }: PageProps) => {
 
   if (Array.isArray(query) || !query) {
     return redirect('/')
-  }
-
-  if (articles.length === 0) {
-    return (
-      <div className='text-center py-4 bg-white shadow-md rounded-b-md'>
-        <X className='mx-auto h-8 w-8 text-gray-400' />
-        <h3 className='mt-2 text-sm font-semibold text-gray-900'>No results</h3>
-        <p className='mt-1 text-sm mx-auto max-w-prose text-gray-500'>
-          Sorry, we couldn't find any matches for{' '}
-          <span className='text-green-600 font-medium'>{query}</span>.
-        </p>
-      </div>
-    )
   }
 
   const textToSearch = query.replace(/[.*+?^${}()|[\]\\]/g,"\\$&")
