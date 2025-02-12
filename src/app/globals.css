@@ -70,3 +70,15 @@ body {
     @apply bg-background text-foreground;
   }
 }
+
+#Search::-webkit-search-cancel-button{
+  position:relative;
+  right:2.5rem;  
+  cursor: pointer;
+  
+  -webkit-appearance: none;
+
+  background: url(https://pro.fontawesome.com/releases/v5.10.0/svgs/solid/times-circle.svg) no-repeat 50% 50%;
+  height: 1.2rem;
+  width: 1.2rem;
+}
